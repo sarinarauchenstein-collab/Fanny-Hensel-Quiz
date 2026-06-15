@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fanny Hensel – Quiz</title>
+
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f3f1ff;
+}
+
+header {
+    background: #382a5c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #5a4690;
+}
+
+nav button {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+}
+
+section {
+    display: none;
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.active { display: block; }
+
+.question { margin-bottom: 15px; }
+
+button.answer {
+    display: block;
+    margin: 5px 0;
+    padding: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #5a4690;
+    color: white;
+    cursor: pointer;
+}
+
+button.answer:hover {
+    background: #382a5c;
+}
+
+.result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Fanny Hensel – Lernquiz</h1>
+</header>
+
+<nav>
+<button onclick="show('home')">Start</button>
+<button onclick="show('allgemein')">Allgemein</button>
+<button onclick="show('heute')">Heutige Bedeutung</button>
+<button onclick="show('jahr')">Das Jahr</button>
+<button onclick="show('romantik')">Romantik</button>
+<button onclick="show('vergleich')">Vergleich</button>
+</nav>
+
+<!-- START -->
+<section id="home" class="active">
+<h2>Willkommen</h2>
+<p>
+Diese Website dient dazu, die Inhalte zu den beiliegenden Plakaten zu testen und zu festigen. Erstellt wurde diese durch die Schülerinnen Sarina Rauchenstein, Margot Donnoli und Lena Keller der G23D der Neuen Kantonsschule Aarau als Arbeit im Fach Musik.
+</p>
+</section>
+
+<!-- ALLGEMEIN -->
+<section id="allgemein">
+<h2>Allgemein</h2>
+
+<div class="question">
+<p>1. Welche Aussage passt am besten?</p>
+<button class="answer" onclick="check(this,false)">Sie war nur Pianistin ohne eigene Werke</button>
+<button class="answer" onclick="check(this,true)">Sie komponierte, veröffentlichte aber wenig öffentlich</button>
+<button class="answer" onclick="check(this,false)">Sie war Opernsängerin</button>
+</div>
+
+<div class="question">
+<p>2. Wie war ihre Ausbildung?</p>
+<button class="answer" onclick="check(this,false)">Nur autodidaktisch</button>
+<button class="answer" onclick="check(this,true)">Sehr umfassend im bürgerlichen Umfeld</button>
+<button class="answer" onclick="check(this,false)">Keine musikalische Ausbildung</button>
+</div>
+
+<div class="question">
+<p>3. Sonntagsmusiken waren…</p>
+<button class="answer" onclick="check(this,false)">öffentliche Opern</button>
+<button class="answer" onclick="check(this,true)">private Konzerte mit hohem Niveau</button>
+<button class="answer" onclick="check(this,false)">religiöse Rituale</button>
+</div>
+
+<div class="question">
+<p>4. Was war das Hauptproblem ihrer Karriere?</p>
+<button class="answer" onclick="check(this,true)">gesellschaftliche Erwartungen</button>
+<button class="answer" onclick="check(this,false)">fehlendes Talent</button>
+<button class="answer" onclick="check(this,false)">keine Ausbildung möglich</button>
+</div>
+
+<div class="question">
+<p>5. Was ist über ihre Familie bekannt?</p>
+<button class="answer" onclick="check(this,false)">Sie war alleinstehend</button>
+<button class="answer" onclick="check(this,true)">Sie war die Schwester von Felix Mendelssohn</button>
+<button class="answer" onclick="check(this,false)">Sie hatte keine musikalische Familie</button>
+</div>
+
+<div class="result"></div>
+</section>
+
+<!-- HEUTE -->
+<section id="heute">
+<h2>Heutige Bedeutung</h2>
+
+<div class="question">
+<p>1. Heute wird sie vor allem gesehen als…</p>
+<button class="answer" onclick="check(this,false)">Opernreformerin</button>
+<button class="answer" onclick="check(this,true)">wiederentdeckte Komponistin</button>
+<button class="answer" onclick="check(this,false)">Dirigentin</button>
+</div>
+
+<div class="question">
+<p>2. Ihre Bedeutung steht heute für…</p>
+<button class="answer" onclick="check(this,true)">Frauen in der Musikgeschichte</button>
+<button class="answer" onclick="check(this,false)">Barockmusik</button>
+<button class="answer" onclick="check(this,false)">Kirchenmusik</button>
+</div>
+
+<div class="question">
+<p>3. Warum wurde sie früher unterschätzt?</p>
+<button class="answer" onclick="check(this,false)">wegen fehlender Werke</button>
+<button class="answer" onclick="check(this,true)">wegen gesellschaftlicher Rollenbilder</button>
+<button class="answer" onclick="check(this,false)">wegen schlechter Qualität</button>
+</div>
+
+<div class="question">
+<p>4. Was passiert heute mit ihren Werken?</p>
+<button class="answer" onclick="check(this,true)">werden neu aufgeführt und analysiert</button>
+<button class="answer" onclick="check(this,false)">werden verboten</button>
+<button class="answer" onclick="check(this,false)">werden zerstört</button>
+</div>
+
+<div class="question">
+<p>5. Einfluss heute am stärksten in…</p>
+<button class="answer" onclick="check(this,false)">Popmusik</button>
+<button class="answer" onclick="check(this,true)">Musikforschung & Gender Studies</button>
+<button class="answer" onclick="check(this,false)">Opernhäusern</button>
+</div>
+
+<div class="result"></div>
+</section>
+
+<!-- DAS JAHR -->
+<section id="jahr">
+<h2>„Das Jahr“</h2>
+
+<div class="question">
+<p>1. Was ist "das Jahr" grundsätzlich?</p>
+<button class="answer" onclick="check(this,true)">Klavierzyklus</button>
+<button class="answer" onclick="check(this,false)">Symphonie</button>
+<button class="answer" onclick="check(this,false)">Opernhandlung</button>
+</div>
+
+<div class="question">
+<p>2. Wie ist die Stimmung im "März"?</p>
+<button class="answer" onclick="check(this,false)">ruhig und traurig</button>
+<button class="answer" onclick="check(this,true)">Aufbruch / Übergang</button>
+<button class="answer" onclick="check(this,false)">leicht und fröhlich</button>
+</div>
+
+<div class="question">
+<p>3. Wie ist das Tempo im "Juni"?</p>
+<button class="answer" onclick="check(this,true)">eher langsam</button>
+<button class="answer" onclick="check(this,false)">sehr schnell</button>
+<button class="answer" onclick="check(this,false)">schnell bewegend</button>
+</div>
+
+<div class="question">
+<p>4. Wie wirkt der "September"?</p>
+<button class="answer" onclick="check(this,false)">Winterruhe</button>
+<button class="answer" onclick="check(this,true)">Reife / Übergang</button>
+<button class="answer" onclick="check(this,false)">Neubeginn</button>
+</div>
+
+<div class="question">
+<p>5. Wie ist die Harmonik im "Dezember"?</p>
+<button class="answer" onclick="check(this,false)">chromatisch</button>
+<button class="answer" onclick="check(this,false)">diatonisch</button>
+<button class="answer" onclick="check(this,true)">Modulation</button>
+</div>
+
+<div class="question">
+<p>6. Was ist die musikalische Idee dahinter?</p>
+<button class="answer" onclick="check(this,false)">reine Unterhaltung</button>
+<button class="answer" onclick="check(this,true)">Emotion, Natur, Zeit als Einheit</button>
+<button class="answer" onclick="check(this,false)">technische Übung</button>
+</div>
+
+<div class="result"></div>
+</section>
+
+<!-- ROMANTIK -->
+<section id="romantik">
+<h2>Romantik</h2>
+
+<div class="question">
+<p>1. Was ist das Hauptmerkmal der Romantik?</p>
+<button class="answer" onclick="check(this,true)">Gefühl steht über Vernunft</button>
+<button class="answer" onclick="check(this,false)">nur rationale Gedanken zählen</button>
+<button class="answer" onclick="check(this,false)">das einzige was zählt sind die Gefühle</button>
+</div>
+
+<div class="question">
+<p>2. Natur wird…</p>
+<button class="answer" onclick="check(this,false)">ignoriert</button>
+<button class="answer" onclick="check(this,true)">symbolisch dargestellt</button>
+<button class="answer" onclick="check(this,false)">verboten</button>
+</div>
+
+<div class="question">
+<p>3. Individuum ist in der Romantik…</p>
+<button class="answer" onclick="check(this,true)">zentral</button>
+<button class="answer" onclick="check(this,false)">unwichtig</button>
+<button class="answer" onclick="check(this,false)">verboten</button>
+</div>
+
+<div class="question">
+<p>4. Formfreiheit bedeutet…</p>
+<button class="answer" onclick="check(this,true)">mehr kreative Freiheit</button>
+<button class="answer" onclick="check(this,false)">strengere Regeln</button>
+<button class="answer" onclick="check(this,false)">keine Melodie</button>
+</div>
+
+<div class="question">
+<p>5. Romantik ist am besten…</p>
+<button class="answer" onclick="check(this,false)">technisch definiert</button>
+<button class="answer" onclick="check(this,true)">Gefühlsausdruck als Zentrum</button>
+<button class="answer" onclick="check(this,false)">nur religiös</button>
+</div>
+
+<div class="result"></div>
+</section>
+
+<!-- VERGLEICH -->
+<section id="vergleich">
+<h2>Vergleich mmit Bruder Felix Mendelssohn</h2>
+
+<div class="question">
+<p>1. Was trifft auf die Gesellschaft im 19. Jh. zu?</p>
+<button class="answer" onclick="check(this,true)">ungleiche Chancen für Männer/Frauen</button>
+<button class="answer" onclick="check(this,false)">voll gleich</button>
+<button class="answer" onclick="check(this,false)">Frauen bevorzugt</button>
+</div>
+
+<div class="question">
+<p>2. Wo liegt der Unterschied in der Karriere der beiden Geschwister?</p>
+<button class="answer" onclick="check(this,true)">er öffentlich angesehen, sie privat bekannt</button>
+<button class="answer" onclick="check(this,false)">gleiche Behandlung</button>
+<button class="answer" onclick="check(this,false)">sie war erfolgreicher</button>
+</div>
+
+<div class="question">
+<p>3. Wie wurden die Beiden gefördert?</p>
+<button class="answer" onclick="check(this,false)">nur sie wurde gefördert</button>
+<button class="answer" onclick="check(this,true)">beide wurden gefördert</button>
+<button class="answer" onclick="check(this,false)">keine Förderung, beide hatte grosses Talent</button>
+</div>
+
+<div class="question">
+<p>4. Wo liegt der Hauptunterschied in dem Karriereweg?</p>
+<button class="answer" onclick="check(this,true)">gesellschaftliche Normen</button>
+<button class="answer" onclick="check(this,false)">Talentunterschied</button>
+<button class="answer" onclick="check(this,false)">Zufall</button>
+</div>
+
+<div class="question">
+<p>5. Welche Rückschlüsse lassen sich aus dem Vergleich ziehen?</p>
+<button class="answer" onclick="check(this,false)">keine Aussage</button>
+<button class="answer" onclick="check(this,true)">Strukturen beeinflussen Karriere</button>
+<button class="answer" onclick="check(this,false)">Musik ist unabhängig von Gesellschaft</button>
+</div>
+
+<div class="result"></div>
+</section>
+
+<script>
+function show(id){
+    document.querySelectorAll("section").forEach(s => s.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+function check(btn, correct){
+    let section = btn.closest("section");
+
+    btn.parentElement.querySelectorAll("button").forEach(b => b.disabled = true);
+
+    if(correct){
+        btn.style.background = "green";
+    } else {
+        btn.style.background = "red";
+    }
+
+    let allButtons = section.querySelectorAll("button.answer");
+    let correctCount = 0;
+
+    allButtons.forEach(b => {
+        if(b.style.background === "green") correctCount++;
+    });
+
+    let questions = section.querySelectorAll(".question");
+    let answered = section.querySelectorAll("button.answer:disabled").length / 3;
+
+    let result = section.querySelector(".result");
+
+    if(answered === questions.length){
+        result.innerText = "Ergebnis: " + correctCount + " / " + questions.length;
+    }
+}
+</script>
+
+</body>
+</html>
